@@ -10,7 +10,7 @@ browser = webdriver.Edge()
 browser.get("https://cybearshield.uk")
 browser.maximize_window()
 browser.implicitly_wait(20)
-wait = WebDriverWait(browser, 10)
+wait = WebDriverWait(browser, 20)
 element = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Github")))
 element.click()
 
@@ -28,9 +28,10 @@ repos = wait.until(EC.presence_of_all_elements_located(
 if len(repos) >= 2:
     link = repos[1].find_element(By.CSS_SELECTOR, 'span.repo')
     link.click()
+    time.sleep(5)
 else:
     print("Less than 2 pinned repos found.")
 
 
 
-time.sleep(150)
+browser.quit()
