@@ -11,7 +11,7 @@ browser.get("https://cybearshield.uk")
 browser.maximize_window()
 browser.implicitly_wait(20)
 wait = WebDriverWait(browser, 10)
-element = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Github")))  # Note the casing
+element = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Github")))
 element.click()
 
 
